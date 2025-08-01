@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Nombre que se ve bajo el icono -->
+  <key>CFBundleDisplayName</key>
+  <string>B&R Consulting</string>
+
+  <!-- Identificador del bundle (deja que Xcode lo sustituya) -->
+  <key>CFBundleIdentifier</key>
+  <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
+  <!-- Nombre de paquete y versión -->
+  <key>CFBundleName</key>
+  <string>Consulting</string>
+  <key>CFBundleShortVersionString</key>
+  <string>$(FLUTTER_BUILD_NAME)</string>
+  <key>CFBundleVersion</key>
+  <string>$(FLUTTER_BUILD_NUMBER)</string>
+
+  <!-- Región y ejecutable -->
+  <key>CFBundleDevelopmentRegion</key>
+  <string>$(DEVELOPMENT_LANGUAGE)</string>
+  <key>CFBundleExecutable</key>
+  <string>$(EXECUTABLE_NAME)</string>
+
+  <!-- Info plist y tipo -->
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>LSRequiresIPhoneOS</key>
+  <true/>
+
+  <!-- Pantalla de lanzamiento -->
+  <key>UILaunchStoryboardName</key>
+  <string>LaunchScreen</string>
+
+  <!-- Orientaciones soportadas -->
+  <key>UISupportedInterfaceOrientations</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+    <string>UIInterfaceOrientationLandscapeLeft</string>
+    <string>UIInterfaceOrientationLandscapeRight</string>
+  </array>
+  <key>UISupportedInterfaceOrientations~ipad</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+    <string>UIInterfaceOrientationLandscapeLeft</string>
+    <string>UIInterfaceOrientationLandscapeRight</string>
+  </array>
+
+  <!-- —————————————————————————————————————— -->
+  <!--      PRIVACY / PERMISSIONS              -->
+  <!-- —————————————————————————————————————— -->
+
+  <!-- Cámara -->
+  <key>NSCameraUsageDescription</key>
+  <string>Necesitamos acceder a la cámara para tomar fotos de los reportes.</string>
+
+  <!-- Galería / Fotos -->
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Necesitamos acceder a tu galería para adjuntar imágenes en los reportes.</string>
+
+  <!-- Ubicación solo en uso -->
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Necesitamos tu ubicación mientras usas la app para registrar dónde haces cada reporte.</string>
+
+  <!-- Ubicación siempre y en uso (background) -->
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Necesitamos tu ubicación incluso en segundo plano para seguimiento continuo de reportes.</string>
+
+  <!-- —————————————————————————————————————— -->
+  <!--    FIN PRIVACY / PERMISSIONS            -->
+  <!-- —————————————————————————————————————— -->
+
+</dict>
+</plist>

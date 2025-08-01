@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233534075953",
+    "project_id": "byr-consulting",
+    "storage_bucket": "byr-consulting.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233534075953:android:a4b9c2e21e4451911dd110",
+        "android_client_info": {
+          "package_name": "com.byr.consulting"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC14RfoycRORV3EUTFAFhufJZKW_hrArMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
