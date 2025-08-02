@@ -173,7 +173,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Column(
                   children: [
                     Image.asset('assets/logo_white.png', height: 55),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 2),
                     Text(
                       'B&R Consulting'.tr(),
                       style: GoogleFonts.poppins(
@@ -182,7 +182,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 2),
                     Text(
                       'Create account subtitle'.tr(),
                       style: GoogleFonts.poppins(

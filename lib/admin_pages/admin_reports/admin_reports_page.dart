@@ -1,6 +1,6 @@
 // admin_reports_page.dart
 
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, unused_local_variable
 
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -62,25 +62,23 @@ class _AdminReportsPageState extends State<AdminReportsPage> {
     // Elige la colección y filtro según el tipo seleccionado
     Query query;
     final auth = FirebaseAuth.instance;
-    switch (_selectedType) {
-      case 'Usuarios':
-        query = FirebaseFirestore.instance
-            .collection('users')
-            .where('rol', isEqualTo: 'usuario');
-        break;
-      case 'Empleados':
-        query = FirebaseFirestore.instance.collection('employees');
-        break;
-      case 'Administradores':
-        query = FirebaseFirestore.instance
-            .collection('users')
-            .where('rol', isEqualTo: 'admin')
-            .where(FieldPath.documentId, isNotEqualTo: auth.currentUser!.uid);
-        break;
-      default:
-        query = FirebaseFirestore.instance
-            .collection('users')
-            .where('rol', isEqualTo: 'usuario');
+
+    if (_selectedType == 'Usuarios'.tr()) {
+      query = FirebaseFirestore.instance
+          .collection('users')
+          .where('rol', isEqualTo: 'usuario');
+    } else if (_selectedType == 'Empleados'.tr()) {
+      query = FirebaseFirestore.instance.collection('employees');
+    } else if (_selectedType == 'Administradores'.tr()) {
+      query = FirebaseFirestore.instance
+          .collection('users')
+          .where('rol', isEqualTo: 'admin')
+          .where(FieldPath.documentId, isNotEqualTo: auth.currentUser!.uid);
+    } else {
+      // fallback a usuarios
+      query = FirebaseFirestore.instance
+          .collection('users')
+          .where('rol', isEqualTo: 'usuario');
     }
 
     query = query.orderBy('firstName').limit(10);
@@ -281,42 +279,44 @@ class _AdminReportsPageState extends State<AdminReportsPage> {
 
                 return GestureDetector(
                   onTap: () async {
-                    // Decide qué página de detalle instanciar
-                    Widget detailPage;
-                    if (_selectedType == 'Usuarios') {
+                    final String id = u['id'] as String;
+                    final String nombre = '${u['firstName']} ${u['lastName']}';
+                    final String photo = u['photoUrl'] as String;
+
+                    late final Widget detailPage;
+
+                    if (_selectedType == 'Usuarios'.tr()) {
                       detailPage = AdminReportsDetail(
-                        userId: u['id'],
+                        userId: id,
                         nombre: nombre,
                         photoUrl: photo,
                       );
-                    } else if (_selectedType == 'Empleados') {
+                    } else if (_selectedType == 'Empleados'.tr()) {
                       detailPage = AdminReportsDetailEmployees(
-                        userId: u['id'],
+                        userId: id,
+                        nombre: nombre,
+                        photoUrl: photo,
+                      );
+                    } else if (_selectedType == 'Administradores'.tr()) {
+                      detailPage = AdminReportsDetailAdmin(
+                        userId: id,
                         nombre: nombre,
                         photoUrl: photo,
                       );
                     } else {
-                      detailPage = AdminReportsDetailAdmin(
-                        userId: u['id'],
-                        nombre: nombre,
-                        photoUrl: photo,
-                      );
+                      // si llega aquí, el tipo no es ninguno de los tres esperados
+                      return;
                     }
 
-                    // Empuja la página de detalle y espera un bool de vuelta
                     final didDelete = await Navigator.push<bool>(
                       context,
                       MaterialPageRoute(builder: (_) => detailPage),
                     );
 
-                    // Si devolvió true, significa que borró el usuario → recarga la lista
                     if (didDelete == true) {
-                      setState(() {
-                        usuarios.clear();
-                        _lastDoc = null;
-                        _hasMore = true;
-                        // opcional: limpia también filtros si quieres
-                      });
+                      usuarios.clear();
+                      _lastDoc = null;
+                      _hasMore = true;
                       _loadUsuarios();
                     }
                   },
