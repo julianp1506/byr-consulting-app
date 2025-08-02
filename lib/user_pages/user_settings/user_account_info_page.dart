@@ -276,7 +276,7 @@ class _UserAccountInfoPageState extends State<UserAccountInfoPage> {
                       ],
                       cursorColor: _mainOrange,
                       decoration: InputDecoration(
-                        labelText: 'Seguridad'.tr(),
+                        labelText: 'Seguridad Usuario'.tr(),
                         hintText: '123-45-6789',
                         prefixIcon: Icon(Icons.credit_card, color: _black),
                         filled: true,

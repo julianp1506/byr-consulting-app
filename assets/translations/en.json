@@ -342,8 +342,7 @@
   "Agregar empresa": "Add company",
   "¿Seguro que quieres borrar '$item'?": "Are you sure you want to delete '$item'?",
   "Empresas": "Companies",
-  "No hay empresas": "No companies"
+  "No hay empresas": "No companies",
+  "Seguridad Usuario": "Social Security / ITIN number"
 
-  
-  }
-  
+}
