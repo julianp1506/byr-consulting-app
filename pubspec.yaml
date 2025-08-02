@@ -43,15 +43,15 @@ dependencies:
   permission_handler: ^11.2.0
 
   # Exportaciones
-  syncfusion_flutter_xlsio: ^24.2.9
+  syncfusion_flutter_xlsio: ^24.1.41
   syncfusion_flutter_pdf: ^24.1.41
   pdf: ^3.10.1
   printing: ^5.11.0
-  excel: ^4.0.0
+  excel: ^2.0.0
   share_plus: ^8.0.0
   month_picker_dialog: ^6.0.3
-  fl_chart: ^0.70.0
-  open_file_macos: ^0.2.0
+  fl_chart: ^0.70.0 
+  open_file_macos: ^0.2.0  
 
 dev_dependencies:
   flutter_test:
