@@ -43,8 +43,11 @@ dependencies:
   permission_handler: ^11.2.0
 
   # Exportaciones
-  syncfusion_flutter_xlsio: ^24.1.41
-  syncfusion_flutter_pdf: ^24.1.41
+  #syncfusion_flutter_xlsio: ^24.1.41
+  #syncfusion_flutter_pdf: ^24.1.41
+  syncfusion_flutter_xlsio: ^29.1.33
+  syncfusion_flutter_pdf: ^29.1.33
+  syncfusion_flutter_core: ^29.1.33
   pdf: ^3.10.1
   printing: ^5.11.0
   excel: ^2.0.0
